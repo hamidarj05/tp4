@@ -25,27 +25,31 @@ class EtudiantsController extends Controller
     public function index()
     {
         $notes = $this->notes;
+
+        if (session()->has('result')) {
+            $notes = session('result');
+        }
+
         return view('noteEtudiants', compact('notes'));
     }
     public function Rechercher(Request $request)
     {
 
-        $resultat = [];
+        $result = [];
         $nomRechercher = $request->txtRech;
 
         $notes = $this->notes;
 
         foreach ($notes as $nom => $note) {
             if (preg_match("/$nomRechercher/i", $nom)) {
-                $resultat[$nom] = $note;
+                $result[$nom] = $note;
             }
 
         }
 
-
-        return view('resultat', compact('resultat'));
+        return redirect()->route("all")->with('result', $result)->withInput();
 
     }
 }
 
- 
+

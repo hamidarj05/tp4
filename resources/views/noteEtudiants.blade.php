@@ -41,11 +41,15 @@
                             <td style="{{ $style }}">{{ $nom }}</td>
                             <td style="{{ $style }}">{{ $note }}</td>
                         </tr>
+                        @if ($notes === [])
+                            <p>Cet élève ne figure pas dans le tableau </p>
+                        @endif
 
                     @endforeach
                 </table>
             </ul>
         @endisset
+
     @endsection
 </body>
 
