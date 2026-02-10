@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
 </head>
+
 <body>
-  
-    <header> 
-        <nav>
-            <a href="/">Accueil</a> 
+
+    <header>
+        <nav style="display : flex ; justify-content: space-around;">
+            <a href="{{ route('home') }}" style="color : blue ; text-decoration : none ; font-size: large;">Accueil</a>
+            <a href="{{ route('presentation') }}"
+                style="color : blue ; text-decoration : none ; font-size: large;">presentation</a>
+            <a href="{{ route('result') }}"
+                style="color : blue ; text-decoration : none ; font-size: large;">Resultat</a>
+            <a href="{{ route('contact') }}"
+                style="color : blue ; text-decoration : none ; font-size: large;">Contact</a>
         </nav>
     </header>
 
     <hr>
- 
+
     <main>
         @yield('content')
     </main>
 
     <hr>
- 
-    <footer>
-        <p>© 2026 - Laravel</p>
+
+    <footer style="text-align : center ; background-color: #f2f2f2 ; padding: 20px 10px;">
+        <div style ="display : flex ; justify-content: space-around;">
+            <ul style = "list-style-type: none; display : flex ; flex-direction: column ; align-items: baseline;">
+                <li> <a href="{{ route('home') }}"
+                        style="color : blue ; text-decoration : none ; font-size: large;">Accueil</a>
+                </li>
+                <li> <a href="{{ route('presentation') }}"
+                        style="color : blue ; text-decoration : none ; font-size: large;">presentation</a>
+                </li>
+                <li> <a href="{{ route('result') }}"
+                        style="color : blue ; text-decoration : none ; font-size: large;">Resultat</a></li>
+                <li> <a href="{{ route('contact') }}"
+                        style="color : blue ; text-decoration : none ; font-size: large;">Contact</a></li>
+            </ul>
+            <ul style="list-style-type: none; display : flex ; flex-direction: column ; align-items: baseline;">
+                <li>Telephone : 0454545454</li>
+                <li>Adresse : Anfa</li>
+            </ul>
+        </div>
+        <div>
+            <p>Copyright &copy; 2026</p>
+        </div>
     </footer>
 
 </body>
+
 </html>

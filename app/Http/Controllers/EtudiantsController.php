@@ -30,7 +30,7 @@ class EtudiantsController extends Controller
             $notes = session('result');
         }
 
-        return view('noteEtudiants', compact('notes'));
+        return view('result', compact('notes'));
     }
     public function Rechercher(Request $request)
     {
@@ -47,7 +47,7 @@ class EtudiantsController extends Controller
 
         }
 
-        return redirect()->route("all")->with('result', $result)->withInput();
+        return redirect()->route("result")->with('result', $result)->withInput();
 
     }
 }

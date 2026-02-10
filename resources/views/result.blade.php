@@ -4,12 +4,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=*, initial-scale=1.0">
-    @section('title', 'notes')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @section('title')
+        Resultat
+    @endsection
+
 </head>
 
 <body>
-
     @section('content')
         <div>
             <h1>Liste Des Notes</h1>
@@ -49,13 +51,11 @@
                         @endforeach
 
                     </table>
- 
+    
                 </ul>
             @endisset
         </div>
-
     @endsection
-
 </body>
 
 </html>

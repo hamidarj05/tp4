@@ -1,0 +1,8 @@
+in 10-02-26 :
+
+
+Comment creer une component :
+php artisan make:component componentName
+
+
+render() : Pour 
